@@ -1,0 +1,312 @@
+/* ============================
+   ABOUT SECTION
+============================ */
+
+.about {
+  box-sizing: border-box;
+
+  width: 100%;
+  min-height: 430px;
+
+  padding: 75px 8%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 70px;
+
+  background: #000000;
+  color: #ffffff;
+}
+
+.about *,
+.about *::before,
+.about *::after {
+  box-sizing: border-box;
+}
+
+/* ============================
+   LEFT CONTENT
+============================ */
+
+.about-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: #ffffff;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Heading */
+
+.about-title {
+  margin: 0 0 20px;
+
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+
+  overflow-wrap: anywhere;
+}
+
+.about-title strong {
+  color: #f5c400;
+  text-shadow:
+    0 0 10px rgba(245, 196, 0, 0.4),
+    0 0 30px rgba(245, 196, 0, 0.3),
+    0 0 65px rgba(245, 196, 0, 0.16);
+  font-weight: 600;
+}
+
+/* Description */
+
+.about-description {
+  max-width: 600px;
+
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ============================
+   SERVICES LIST
+============================ */
+
+.about-services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin: 25px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.about-services li {
+  position: relative;
+
+  padding-left: 30px;
+
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.about-services li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+ 
+  color: #f5c400;
+  
+
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ============================
+   STATISTICS GRID
+============================ */
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* Individual card */
+
+.about-stat {
+  box-sizing: border-box;
+
+  min-width: 0;
+  min-height: 125px;
+
+  padding: 20px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    125deg,
+    #202036 0%,
+    #202036 43%,
+    #4931a0 58%,
+    #29213f 73%,
+    #202036 100%
+  );
+  color: #111111;
+
+  text-align: center;
+  text-decoration: none;
+
+  
+  border-radius:12px;
+
+  transition:
+    transform 0.39s ease,
+    background-color 0.39s ease,
+    box-shadow 0.29s ease;
+}
+
+/* Numbers */
+
+.about-stat-number {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* Labels */
+
+.about-stat-label {
+  display: block;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+/* Clickable card hover */
+
+a.about-stat:hover {
+  transform: translateY(-5px);
+  color: #ffffff;
+
+  background: linear-gradient(
+    125deg,
+    #8989c6 0%,
+    #34346d 43%,
+    #3a2a7a 58%,
+    #272233 73%,
+    #000000 100%
+  );
+
+  box-shadow: 0 8px 22px rgba(33, 92, 123, 0.15);
+}
+
+/* Keyboard accessibility */
+
+a.about-stat:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* ============================
+   TABLETS
+============================ */
+
+@media (max-width: 1000px) {
+  .about {
+    padding: 65px 5%;
+    gap: 35px;
+  }
+
+  .about-stats {
+    gap: 14px;
+  }
+
+  .about-stat {
+    min-height: 115px;
+    padding: 16px 10px;
+  }
+
+  .about-stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================
+   MOBILE
+============================ */
+
+@media (max-width: 700px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+
+    padding: 55px 6%;
+  }
+
+  .about-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .about-description {
+    font-size: 0.93rem;
+  }
+
+  .about-services {
+    gap: 14px;
+  }
+
+  .about-stats {
+    gap: 15px;
+  }
+
+  .about-stat {
+    min-height: 115px;
+  }
+
+  .about-stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* ============================
+   SMALL MOBILE
+============================ */
+
+@media (max-width: 380px) {
+  .about {
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 1.9rem;
+  }
+
+  .about-stats {
+    gap: 10px;
+  }
+
+  .about-stat {
+    min-height: 105px;
+    padding: 12px 7px;
+  }
+
+  .about-stat-number {
+    font-size: 1.8rem;
+  }
+
+  .about-stat-label {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,229 @@
+/* ============================
+   NAVBAR
+============================ */
+
+.navbar {
+  position:absolute;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: #000000;
+  border-bottom: 1px solid #4931a0;
+  box-sizing: border-box;
+}
+
+/* Include padding and borders in element widths */
+
+.navbar *,
+.navbar *::before,
+.navbar *::after {
+  box-sizing: border-box;
+}
+
+/* ============================
+   CONTAINER
+============================ */
+
+.navbar-container {
+  width: 100%;
+  max-width: none;
+  min-height: 72px;
+
+  margin: 0;
+  padding: 12px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ============================
+   LOGO
+============================ */
+
+.navbar-logo {
+  flex: 0 0 auto;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.navbar-logo span {
+  color: #4931a0;
+}
+
+/* ============================
+   NAVIGATION LINKS
+============================ */
+
+.navbar-links {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: clamp(10px, 1.8vw, 24px);
+}
+
+.navbar-link {
+  flex: 0 1 auto;
+  min-width: 0;
+
+  position: relative;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: #f5c400;
+}
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #4931a0;
+  transition: width 0.25s ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* ============================
+   SMALL LAPTOPS
+============================ */
+
+@media (max-width: 1000px) {
+  .navbar-container {
+    min-height: 64px;
+    padding: 10px 14px;
+    gap: 14px;
+  }
+
+  .navbar-logo {
+    font-size: 26px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .navbar-link {
+    font-size: 13px;
+  }
+}
+
+/* ============================
+   TABLETS
+============================ */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    min-height: 58px;
+    padding: 9px 10px;
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    font-size: 23px;
+    letter-spacing: 0;
+  }
+
+  .navbar-links {
+    gap: 8px;
+  }
+
+  .navbar-link {
+    font-size: 12px;
+  }
+
+  .navbar-link::after {
+    bottom: -4px;
+  }
+}
+
+/* ============================
+   MOBILE PHONES
+============================ */
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 52px;
+    padding: 8px 6px;
+    gap: 7px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    flex: 1 1 0;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .navbar-link {
+    font-size: clamp(8px, 2.6vw, 11px);
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+
+  .navbar-link::after {
+    bottom: -3px;
+    height: 1px;
+  }
+}
+
+/* ============================
+   VERY SMALL PHONES
+============================ */
+
+@media (max-width: 360px) {
+  .navbar-container {
+    padding-right: 4px;
+    padding-left: 4px;
+    gap: 5px;
+  }
+
+  .navbar-logo {
+    font-size: 17px;
+  }
+
+  .navbar-links {
+    gap: 3px;
+  }
+
+  .navbar-link {
+    font-size: 8px;
+    letter-spacing: -0.35px;
+  }
+}

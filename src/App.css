@@ -1,0 +1,172 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+}
+/* ========================================
+   REUSABLE DARK DECORATIVE BACKGROUND
+======================================== */
+
+.dark-tech-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 8% 25%,
+      rgba(73, 49, 160, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 92% 85%,
+      rgba(20, 35, 105, 0.24),
+      transparent 35%
+    ),
+    #000000;
+}
+
+/* Subtle grid */
+
+.dark-tech-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(73, 49, 160, 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(73, 49, 160, 0.09) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+}
+
+/* Purple and blue atmospheric glows */
+
+.dark-tech-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 0% 10%,
+      rgba(73, 49, 160, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 90%,
+      rgba(20, 35, 105, 0.2),
+      transparent 35%
+    );
+}
+
+/* Floating decorative shapes */
+
+.dark-tech-background .tech-orb {
+  position: absolute;
+  z-index: -1;
+
+  width: 150px;
+  height: 290px;
+
+  border-radius: 100px;
+  background: rgba(35, 29, 80, 0.14);
+
+  pointer-events: none;
+  transform: rotate(-4deg);
+}
+
+.dark-tech-background .tech-orb-one {
+  top: 4%;
+  left: 13%;
+}
+
+.dark-tech-background .tech-orb-two {
+  top: 13%;
+  right: 8%;
+
+  width: 180px;
+  height: 310px;
+
+  transform: rotate(7deg);
+}
+
+.dark-tech-background .tech-orb-three {
+  right: 3%;
+  bottom: 8%;
+
+  width: 105px;
+  height: 250px;
+
+  transform: rotate(5deg);
+}
+
+/* Decorative programming text */
+
+.dark-tech-background .tech-code {
+  position: absolute;
+  z-index: -1;
+
+  color: #164f3b;
+  font-family: monospace;
+  font-size: 14px;
+
+  opacity: 0.32;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Yellow particles */
+
+.dark-tech-background .tech-particle {
+  position: absolute;
+  z-index: -1;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #f5c400;
+
+  box-shadow: 0 0 10px rgba(245, 196, 0, 0.55);
+
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 600px) {
+  .dark-tech-background .tech-orb-two {
+    right: -90px;
+  }
+
+  .dark-tech-background .tech-code {
+    font-size: 11px;
+  }
+}
