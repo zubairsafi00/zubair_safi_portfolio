@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zubairsafi00.github.io/zubair_safi_portfolio/sitemap.xml
