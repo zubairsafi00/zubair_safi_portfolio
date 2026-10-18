@@ -75,16 +75,17 @@ export default function Footer() {
         {/* Quick Navigation */}
         <nav className="footer-navigation" aria-label="Footer navigation">
           <h3>Quick Links</h3>
-
           <div className="footer-nav-links">
             {navigationLinks.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name}
-              </a>
-            ))}
+            <Link key={link.name} to={link.href}>
+            {link.name}
+            </Link>
+          ))}
 
-            <Link to="/contact">Contact</Link>
+           <Link to="/contact">Contact</Link>
           </div>
+
+          
         </nav>
 
         {/* Social and Contact Icons */}
@@ -121,14 +122,15 @@ export default function Footer() {
       </div>
 
       {/* Back to Top */}
-      <a
-        href="/#hero"
-        className="footer-back-to-top"
-        aria-label="Back to top"
-        title="Back to top"
-      >
-        <FaArrowUp />
-      </a>
+      <Link
+          to="/#hero"
+          className="footer-back-to-top"
+          aria-label="Back to top"
+          title="Back to top"
+        >
+          <FaArrowUp />
+      </Link>
+      
     </footer>
   );
 }

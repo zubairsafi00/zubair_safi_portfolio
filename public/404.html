@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      const segment = 1;
+      const pathSegments = window.location.pathname.split("/");
+      const repository = pathSegments[segment];
+
+
+  const redirect =
+    window.location.origin +
+    "/" +
+    repository +
+    "/?/" +
+    pathSegments.slice(segment + 1).join("/") +
+    window.location.search.replace(/&/g, "~and~") +
+    window.location.hash;
+
+  window.location.replace(redirect);
+</script>
+
+
+  </head>
+  <body>
+    <p>Redirecting to the requested page...</p>
+  </body>
+</html>

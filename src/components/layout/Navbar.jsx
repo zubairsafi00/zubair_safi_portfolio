@@ -32,24 +32,32 @@ export default function Navbar() {
 
   // Navigate to sections on the Home page
   function handleSectionNavigation(event, sectionId) {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (location.pathname !== "/") {
-      navigate(`/#${sectionId}`);
-      return;
-    }
-
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      window.history.replaceState(null, "", `/#${sectionId}`);
-    }
+  if (location.pathname !== "/") {
+  navigate(`/#${sectionId}`);
+  return;
   }
+
+  const section = document.getElementById(sectionId);
+
+  if (section) {
+  section.scrollIntoView({
+  behavior: "smooth",
+  block: "start",
+  });
+
+
+  window.history.replaceState(
+    null,
+    "",
+    `${window.location.pathname}#${sectionId}`
+  );
+
+
+  }
+  }
+
 
   return (
     <nav className="navbar">
@@ -62,16 +70,16 @@ export default function Navbar() {
         {/* Navigation links */}
         <div className="navbar-links">
           {homeSections.map((section) => (
-            <a
-              key={section.id}
-              href={`/#${section.id}`}
-              className="navbar-link"
-              onClick={(event) =>
-                handleSectionNavigation(event, section.id)
-              }
-            >
-              {section.label}
-            </a>
+            <Link
+                key={section.id}
+                to={`/#${section.id}`}
+                className="navbar-link"
+                onClick={(event) =>
+                  handleSectionNavigation(event, section.id)
+                }
+              >
+                {section.label}
+            </Link>
           ))}
 
           {/* Contact page */}
