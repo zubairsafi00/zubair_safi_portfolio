@@ -10,8 +10,19 @@ import MetaJavaScript from "../../assets/META Programing with Java Script.png";
 import MetaPython from "../../assets/META Programing with Python.png";
 import MetaReactBasics from "../../assets/META React basics.png";
 import MetaVersionControl from "../../assets/META Version Controll.png";
+import MetaDatabase from "../../assets/META Database.png"
 
 const certificates = [
+  {
+    title: "Database for back-end development",
+    issuer: "Meta",
+    date: "November 8, 2026",
+    description:
+      "Developing and working with databases for back-end of software systems",
+    skills: ["Database Design","Database Management System (DBMS)","SQL","MySQL"],
+    credentialUrl: "https://coursera.org/verify/J4TGB7NA9Z01",
+    image: MetaDatabase,
+  },
   {
     title: "Programming in Python",
     issuer: "Meta",

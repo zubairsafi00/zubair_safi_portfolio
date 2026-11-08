@@ -21,6 +21,7 @@ import {
   SiCplusplus,
   SiDjango,
   SiVite,
+  SiMysql,
 } from "react-icons/si";
 
 import "./Skills.css";
@@ -38,6 +39,7 @@ export default function Skills() {
         { name: "C++", icon: <SiJavascript /> },
         { name: "HTML5", icon: <FaHtml5 /> },
         { name: "CSS3", icon: <FaCss3Alt /> },
+        { name: "SQL", icon: <SiMysql /> },
       ],
     },
     {

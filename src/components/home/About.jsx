@@ -56,7 +56,7 @@ export default function About() {
         </a>
 
         <a href="#certificates" className="about-stat">
-          <span className="about-stat-number">9</span>
+          <span className="about-stat-number">10</span>
           <span className="about-stat-label">Certificates</span>
         </a>
 
